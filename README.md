@@ -1,4 +1,4 @@
-# uni-app-vue-template
+# uniapp-vue3-ts-fast
 > 基于Vite+Vue3+uni-app的H5与微信小程序开发模版，超简洁！超便捷！单页面路由管理~
 
 ## 简介
