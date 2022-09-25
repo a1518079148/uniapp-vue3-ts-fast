@@ -1,58 +1,88 @@
 <template>
-    <template v-if="!system.isWeixinClient">
-        <uni-nav-bar :dark="false" :fixed="true" background-color="#007AFF00" height="44" status-bar left-icon="left"
-            left-text="返回" :title="title" @clic-left="back" />
-    </template>
+    <div class="title-bar" :style="getStyle(styles)">
+        <div class="title-box" :style="{ marginTop: `${store.system.statusBarHeight}px` }">
+            <div class="title-left" @click="back">
+                <div class="title-left-icon" v-if="backShow && router.history.length > 1">
+                    <img src="@/static/image/left.svg" style="width:22px;margin-top: 2px;" />
+                </div>
+            </div>
+            <div class="title-centent">{{ title }}</div>
+            <div class="title-right"></div>
+        </div>
+    </div>
 </template>
 <script setup lang="ts">
+import router from '@/router';
 import store from '@/store';
-const system = store.system
+import { reactive } from 'vue';
+
 const props = defineProps({
-    leftText: {
-        type: Boolean,
-        default: false
-    },
-    title: {
-        type: String,
-        default: '自定义导航栏'
-    },
-    // 返回回调事件
-    callback: {
-        type: Boolean,
-        default: false
-    },
-    // 没有icon
-    noIcon: {
-        type: Boolean,
-        default: false
-    },
-    // 返回首页
-    isBackToHome: {
-        type: Boolean,
-        default: false
-    },
-    border: {
-        type: [Boolean, String],
-        default: true
-    },
-    color: {
-        type: String,
-        default: '#000000'
-    },
-    backgroundColor: {
-        type: String,
-        default: '#fff'
-    }
+    styles: { default: {} },
+    title: { default: '标题' },
+    backText: { default: '' },
+    backShow: { default: true },
+    backFun: { default: null as any as Function },
 })
 
-const goHome = () => {
-    uni.switchTab({
-        url: '/pages/index/index'
+const conf = reactive({
+    style: {
+        background: '#fff000',
+    } as CSSStyleDeclaration
+})
+
+const getStyle = (val: any = {}): any => {
+    Object.keys(val).forEach(key => {
+        conf.style[key] = val[key]
     })
+    return conf.style
 }
+
 const back = () => {
-    uni.navigateBack()
+    if (props.backFun) props.backFun()
+    else router.back()
 }
+
 </script>
 <style lang="scss" scoped>
+.title {
+    &-bar {
+        position: fixed;
+        z-index: 101;
+        width: 100vw;
+    }
+
+    &-box {
+        display: flex;
+        height: 44px;
+        padding: 0 10px;
+        justify-content: flex-start;
+        align-items: center;
+        color: #000;
+    }
+
+    &-left {
+        width: 60px;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &-icon {
+            display: inline-flex;
+            align-items: center;
+            color: rgb(51, 51, 51);
+        }
+    }
+
+    &-centent {
+        flex: 1;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    &-right {
+        width: 80px;
+    }
+
+}
 </style>

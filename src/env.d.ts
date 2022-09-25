@@ -7,7 +7,4 @@ declare module '*.vue' {
   export default component
 }
 
-declare module 'request' {
-  import Request from '@/lib/request/index'
-  export { Request }
-}
+declare const wx;

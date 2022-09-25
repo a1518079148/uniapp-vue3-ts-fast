@@ -11,6 +11,18 @@ isWEIXIN = true
 isH5 = true
 // #endif
 
+/**
+ * 判断是否为微信浏览器环境
+ */
+const isWeixinClient = () => {
+    let isWeixinClient = false
+    // #ifdef H5
+    isWeixinClient = window.navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+    // #endif
+    return isWeixinClient
+}
+
+
 const systemInfo = uni.getSystemInfoSync()
 const system = reactive({
     uniBarHeight: 44,
@@ -28,19 +40,7 @@ const system = reactive({
     isDev: process.env.NODE_ENV === 'development',
     isH5,
     isWEIXIN,
-    isWeixinClient: isWeixinClient()
+    isWeixinClient: isWeixinClient(),
 })
 
 export default system
-
-/**
- * 判断是否为微信浏览器环境
- * @returns {boolean}
- */
-function isWeixinClient() {
-    let isWeixinClient = false
-    // #ifdef H5
-    isWeixinClient = window.navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
-    // #endif
-    return isWeixinClient
-}

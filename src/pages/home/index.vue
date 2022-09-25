@@ -1,6 +1,49 @@
 <template>
-    <view class="content">
-		首页
+    <view>
+		首页start<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页<br>
+		首页end<br>
     </view>
 </template>
 

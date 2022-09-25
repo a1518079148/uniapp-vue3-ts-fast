@@ -1,11 +1,11 @@
 <template>
-    <div class="tab-bar" @click="switchTab(0)">
+    <div @click="switchTab(0)" :class="conf.class">
         <div class="tab-bar-border"></div>
         <view v-for="(item, index) in conf.list" :key="index" @click="switchTab(item)" class="tab-bar-item">
             <img :src="router.item.item.pagePath === item.pagePath ? item.selectedIconPath : item.iconPath"
-                class="icon" />
+                class="tab-bar-icon" />
             <div :style="{ color: router.item.item.pagePath === item.pagePath ? conf.selectedColor : conf.color }"
-                class="text">{{
+                class="tab-bar-text">{{
                         item.tabsText
                 }}</div>
         </view>
@@ -14,23 +14,39 @@
 
 <script setup lang="ts">
 import router from '@/router';
-import { reactive } from 'vue';
+import { reactive, watch } from 'vue';
+
+const props = defineProps({
+    show: { default: false, }
+})
 
 const conf = reactive({
     color: "#7A7E83",
     selectedColor: "#3cc51f",
     list: router.tabslist,
+    class: ['', 'tab-bar', 'tab-bar-show']
 })
 
 const switchTab = (item: any) => {
-    router.replace(item.pagePath)
+    router.clear(item.pagePath)
 }
+
+const show = () => {
+    if (props.show) conf.class[2] = 'tab-bar-show'
+    else conf.class[2] = 'tab-bar-hide'
+}
+
+watch(() => props.show, (val) => {
+    show()
+})
+
+show()
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .tab-bar {
-    z-index: 999;
+    z-index: 100;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -39,6 +55,11 @@ const switchTab = (item: any) => {
     background: white;
     display: flex;
     padding-bottom: env(safe-area-inset-bottom);
+    transition: all .3s;
+}
+
+.tab-bar-hide {
+    transform: translate(0px, 60px);
 }
 
 .tab-bar-border {
@@ -61,12 +82,12 @@ const switchTab = (item: any) => {
 }
 
 .tab-bar-item {
-    .icon {
+    .tab-bar-icon {
         width: 27px;
         height: 27px;
     }
 
-    .text {
+    .tab-bar-text {
         font-size: 10px;
         margin-top: 5px;
     }

@@ -1,52 +1,34 @@
 <template>
-    <uni-popup ref="popupRef" type="bottom">
-        <view class="show-modal">
-            <view class="title">{{ props.title }}</view>
-            <view v-if="content" class="content">{{ props.content }}</view>
-            <view class="btn-box rowBC">
-                <view class="cc cancel" @click="onCancel">{{ cancelText }}</view>
-                <view class="cc sure" @click="onConfirm">{{ confirmText }}</view>
+    <div class="g-popup">
+        <uni-popup ref="popupRef" type="bottom" style="z-index:101">
+            <view class="show-modal">
+                <view class="title">{{ props.title }}</view>
+                <view v-if="content" class="modal-content">{{ props.content }}</view>
+                <view class="btn-box rowBC">
+                    <view class="cc cancel" @click="onCancel">{{ cancelText }}</view>
+                    <view class="cc sure" @click="onConfirm">{{ confirmText }}</view>
+                </view>
             </view>
-        </view>
-    </uni-popup>
+        </uni-popup>
+    </div>
 </template>
 
 <script setup lang="ts">
 /**
  * UI 需要自定义的modal
  */
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 const popupRef = ref()
-const $emit = defineEmits(['cancel', 'confirm'])
+const emit = defineEmits(['cancel', 'confirm', 'update:show'])
 const props = defineProps({
-    type: {
-        type: String,
-        default: 'center'
-    },
-    title: {
-        type: String,
-        default: '提示'
-    },
-    content: {
-        type: String,
-        default: ''
-    },
-    confirmText: {
-        type: String,
-        default: '确认'
-    },
-    cancelText: {
-        type: String,
-        default: '取消'
-    },
-    confirmColor: {
-        type: String,
-        default: '#007aff'
-    },
-    cancelColor: {
-        type: String,
-        default: '#000'
-    },
+    show: { default: false, },
+    type: { default: 'center' },
+    title: { default: '提示' },
+    content: { default: '' },
+    confirmText: { default: '确认' },
+    cancelText: { default: '取消' },
+    confirmColor: { default: '#007aff' },
+    cancelColor: { default: '#000' },
     width: {
         type: [String, Number],
         default: 600
@@ -57,12 +39,12 @@ const props = defineProps({
     }
 })
 const onCancel = () => {
-    hideModal()
-    $emit('cancel')
+    emit('update:show', false)
+    emit('cancel')
 }
 const onConfirm = () => {
-    hideModal()
-    $emit('confirm')
+    emit('update:show', false)
+    emit('confirm')
 }
 
 const showModal = () => {
@@ -72,15 +54,24 @@ const hideModal = () => {
     popupRef.value.close()
 }
 
-// 父组件调用子组件必须要暴露出去
-defineExpose({
-    showModal,
-    hideModal
+watch(() => props.show, (val) => {
+    if (val) showModal()
+    else hideModal()
 })
+
 </script>
 
 <style lang="scss" scoped>
+.g-popup {
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
 .show-modal {
+    z-index: 102;
     width: 630rpx;
     margin: 0 30px;
     padding: 50rpx;
@@ -96,7 +87,7 @@ defineExpose({
         font-weight: bold;
     }
 
-    .content {
+    .modal-content {
         margin-bottom: 54rpx;
         font-size: 28rpx;
         font-weight: 400;

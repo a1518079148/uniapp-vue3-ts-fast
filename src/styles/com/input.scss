@@ -1,0 +1,11 @@
+.wty-input {
+    color: #3EB958;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+
+    &:active,
+    &:focus,
+    &:hover {
+        border: 1px solid #6EDB85;
+    }
+}

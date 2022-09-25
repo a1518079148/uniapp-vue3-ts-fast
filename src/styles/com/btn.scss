@@ -1,0 +1,20 @@
+.wty-btn-wh {
+    width: 526rpx;
+    height: 88rpx;
+    border-radius: 88rpx;
+    padding: 5rpx 36rpx;
+    font-size: 40rpx;
+}
+
+.wty-btn {
+    background: var(--primary);
+    color: #FFFFFF;
+    border: 1px solid var(--primary);
+    transition: all .3s;
+
+    &:active {
+        color: #C5C5C5;
+        background: none;
+        border: 1px solid #C5C5C5;
+    }
+}

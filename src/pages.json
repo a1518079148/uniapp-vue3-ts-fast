@@ -6,8 +6,6 @@
         }
     },
     "pages": [{
-        "path": "pages/index/index"
-    }, {
         "path": "pages/route/index"
     }],
     "globalStyle": {
