@@ -22,7 +22,7 @@
             </div>
         </div>
         <global-bottom :show="router.item.item.showTabs"></global-bottom>
-        <log v-if="conf.debug" />
+        <log />
         <mask v-if="conf.mask" />
     </view>
 </template>
@@ -30,12 +30,12 @@
 <script setup lang="ts">
 import router from '@/router';
 import store from '@/store';
+import clog from '@/utils/clog';
 import ctimer from '@/utils/ctimer';
 import { onMounted, reactive, watch } from 'vue';
 import box from './box.vue';
 
 const conf = reactive({
-    debug: false,
     mask: false,
     router: {
         item1: {
@@ -108,7 +108,10 @@ onMounted(() => {
 })
 
 const beforeleave = () => {
-    if (store.router.push) return
+    if (store.router.close) {
+        store.router.close = false
+        return
+    }
     const beforehl = router.history.length
     router.back()
     if (beforehl > 2) store.router.showRouter()

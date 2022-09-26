@@ -5,13 +5,6 @@
 
 > 全局只有一个路由，需要新增页面显示需要在src/router目录下routeList.ts和index.vue中配置，用于快速创建页面相对较少的微信小程序应用
 
-## 页面展示
-
-> <img src="https://a1518079148.github.io/image/load.png" width="300px">
-> <img src="https://a1518079148.github.io/image/login.png" width="300px">
-> <img src="https://a1518079148.github.io/image/prolist.png" width="300px">
-> <img src="https://a1518079148.github.io/image/home.png" width="300px">
-
 ## 使用技术
 - Vue3
 - Vite

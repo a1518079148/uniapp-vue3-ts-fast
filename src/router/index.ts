@@ -1,4 +1,5 @@
 import store from "@/store";
+import clog from "@/utils/clog";
 import { routerList } from "./routeList";
 import { createRouter } from "./router";
 
@@ -11,12 +12,13 @@ const router = createRouter(<any>routerList, tabsList)
 
 
 router.beforeJump = async (from, to, next, type) => {
-    let bhl = router.history.length
     next()
-    if (bhl != router.history.length && router.history.length == 2 && type !== 'back') {
-        store.router.showRouter(true)
+    if (router.history.length == 2 && type === 'push') {
+        store.router.close = true
+        store.router.showRouter()
     }
-    else if ((router.history.length == 1 && type === 'back') || type === 'clear' || type === 'replace') {
+    else if (router.history.length == 1) {
+        store.router.close = true
         store.router.show = false
     }
 }
