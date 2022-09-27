@@ -112,9 +112,8 @@ const beforeleave = () => {
         store.router.close = false
         return
     }
-    const beforehl = router.history.length
+	store.router.showRouter()
     router.back()
-    if (beforehl > 2) store.router.showRouter()
 }
 </script>
 
