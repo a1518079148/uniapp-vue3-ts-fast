@@ -3,11 +3,12 @@ import { reactive } from "vue"
 const router = reactive({
     show: false,
     close: false,
-    showRouter: () => {
+    showRouter: (callback: () => void = () => { }) => {
         router.show = false
         ctimer.add(() => {
             router.show = true
             router.close = false
+            callback()
         }, 1)
     }
 })

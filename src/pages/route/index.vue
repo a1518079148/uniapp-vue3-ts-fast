@@ -30,7 +30,6 @@
 <script setup lang="ts">
 import router from '@/router';
 import store from '@/store';
-import clog from '@/utils/clog';
 import ctimer from '@/utils/ctimer';
 import { onMounted, reactive, watch } from 'vue';
 import box from './box.vue';
@@ -112,8 +111,10 @@ const beforeleave = () => {
         store.router.close = false
         return
     }
-	store.router.showRouter()
-    router.back()
+    store.router.showRouter(() => {
+        router.back()
+    })
+
 }
 </script>
 
