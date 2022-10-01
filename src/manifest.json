@@ -1,6 +1,6 @@
 {
-    "name" : "万图云",
-    "appid" : "__UNI__DABD6E5",
+    "name" : "uniapp-vue3-ts-fast",
+    "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -50,7 +50,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx7bf64de3e9f8753d",
+        "appid" : "",
         "setting" : {
             "urlCheck" : false,
             "minified" : true
