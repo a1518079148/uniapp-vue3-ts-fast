@@ -1,0 +1,798 @@
+.no-shadow,
+.shadow-0 {
+    box-shadow: none !important
+}
+
+.inset-shadow {
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.7) !important
+}
+
+.inset-shadow-down {
+    box-shadow: inset 0 -7px 9px -7px rgba(0, 0, 0, 0.7) !important
+}
+
+.column,
+.flex,
+.row {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.column.inline,
+.flex.inline,
+.row.inline {
+    display: inline-flex
+}
+
+.row.reverse {
+    flex-direction: row-reverse
+}
+
+.column {
+    flex-direction: column
+}
+
+.column.reverse {
+    flex-direction: column-reverse
+}
+
+.wrap {
+    flex-wrap: wrap
+}
+
+.no-wrap {
+    flex-wrap: nowrap
+}
+
+.reverse-wrap {
+    flex-wrap: wrap-reverse
+}
+
+.justify-start {
+    justify-content: flex-start
+}
+
+.justify-end {
+    justify-content: flex-end
+}
+
+.flex-center,
+.justify-center {
+    justify-content: center
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+.justify-around {
+    justify-content: space-around
+}
+
+.justify-evenly {
+    justify-content: space-evenly
+}
+
+.items-start {
+    align-items: flex-start
+}
+
+.items-end {
+    align-items: flex-end
+}
+
+.flex-center,
+.items-center {
+    align-items: center
+}
+
+.items-baseline {
+    align-items: baseline
+}
+
+.items-stretch {
+    align-items: stretch
+}
+
+.content-start {
+    align-content: flex-start
+}
+
+.content-end {
+    align-content: flex-end
+}
+
+.content-center {
+    align-content: center
+}
+
+.content-stretch {
+    align-content: stretch
+}
+
+.content-between {
+    align-content: space-between
+}
+
+.content-around {
+    align-content: space-around
+}
+
+.self-start {
+    align-self: flex-start
+}
+
+.self-end {
+    align-self: flex-end
+}
+
+.self-center {
+    align-self: center
+}
+
+.self-baseline {
+    align-self: baseline
+}
+
+.self-stretch {
+    align-self: stretch
+}
+
+
+.flex>.col,
+.flex>.col-0,
+.flex>.col-1,
+.flex>.col-2,
+.flex>.col-3,
+.flex>.col-4,
+.flex>.col-5,
+.flex>.col-6,
+.flex>.col-7,
+.flex>.col-8,
+.flex>.col-9,
+.flex>.col-10,
+.flex>.col-11,
+.flex>.col-12,
+.flex>.col-auto,
+.flex>.col-grow,
+.flex>.col-shrink,
+.row>.col,
+.row>.col-0,
+.row>.col-1,
+.row>.col-2,
+.row>.col-3,
+.row>.col-4,
+.row>.col-5,
+.row>.col-6,
+.row>.col-7,
+.row>.col-8,
+.row>.col-9,
+.row>.col-10,
+.row>.col-11,
+.row>.col-12,
+.row>.col-auto,
+.row>.col-grow,
+.row>.col-shrink {
+    width: auto;
+    min-width: 0;
+    max-width: 100%
+}
+
+.column>.col,
+.column>.col-0,
+.column>.col-1,
+.column>.col-2,
+.column>.col-3,
+.column>.col-4,
+.column>.col-5,
+.column>.col-6,
+.column>.col-7,
+.column>.col-8,
+.column>.col-9,
+.column>.col-10,
+.column>.col-11,
+.column>.col-12,
+.column>.col-auto,
+.column>.col-grow,
+.column>.col-shrink,
+.flex>.col,
+.flex>.col-0,
+.flex>.col-1,
+.flex>.col-2,
+.flex>.col-3,
+.flex>.col-4,
+.flex>.col-5,
+.flex>.col-6,
+.flex>.col-7,
+.flex>.col-8,
+.flex>.col-9,
+.flex>.col-10,
+.flex>.col-11,
+.flex>.col-12,
+.flex>.col-auto,
+.flex>.col-grow,
+.flex>.col-shrink {
+    height: auto;
+    min-height: 0;
+    max-height: 100%
+}
+
+.col {
+    flex: 10000 1 0%
+}
+
+.col-0,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-auto {
+    flex: 0 0 auto
+}
+
+.col-grow {
+    flex: 1 0 auto
+}
+
+.col-shrink {
+    flex: 0 1 auto
+}
+
+.row>.col-0 {
+    height: auto;
+    width: 0%
+}
+
+.row>.offset-0 {
+    margin-left: 0%
+}
+
+.column>.col-0 {
+    height: 0%;
+    width: auto
+}
+
+.row>.col-1 {
+    height: auto;
+    width: 8.3333%
+}
+
+.row>.offset-1 {
+    margin-left: 8.3333%
+}
+
+.column>.col-1 {
+    height: 8.3333%;
+    width: auto
+}
+
+.row>.col-2 {
+    height: auto;
+    width: 16.6667%
+}
+
+.row>.offset-2 {
+    margin-left: 16.6667%
+}
+
+.column>.col-2 {
+    height: 16.6667%;
+    width: auto
+}
+
+.row>.col-3 {
+    height: auto;
+    width: 25%
+}
+
+.row>.offset-3 {
+    margin-left: 25%
+}
+
+.column>.col-3 {
+    height: 25%;
+    width: auto
+}
+
+.row>.col-4 {
+    height: auto;
+    width: 33.3333%
+}
+
+.row>.offset-4 {
+    margin-left: 33.3333%
+}
+
+.column>.col-4 {
+    height: 33.3333%;
+    width: auto
+}
+
+.row>.col-5 {
+    height: auto;
+    width: 41.6667%
+}
+
+.row>.offset-5 {
+    margin-left: 41.6667%
+}
+
+.column>.col-5 {
+    height: 41.6667%;
+    width: auto
+}
+
+.row>.col-6 {
+    height: auto;
+    width: 50%
+}
+
+.row>.offset-6 {
+    margin-left: 50%
+}
+
+.column>.col-6 {
+    height: 50%;
+    width: auto
+}
+
+.row>.col-7 {
+    height: auto;
+    width: 58.3333%
+}
+
+.row>.offset-7 {
+    margin-left: 58.3333%
+}
+
+.column>.col-7 {
+    height: 58.3333%;
+    width: auto
+}
+
+.row>.col-8 {
+    height: auto;
+    width: 66.6667%
+}
+
+.row>.offset-8 {
+    margin-left: 66.6667%
+}
+
+.column>.col-8 {
+    height: 66.6667%;
+    width: auto
+}
+
+.row>.col-9 {
+    height: auto;
+    width: 75%
+}
+
+.row>.offset-9 {
+    margin-left: 75%
+}
+
+.column>.col-9 {
+    height: 75%;
+    width: auto
+}
+
+.row>.col-10 {
+    height: auto;
+    width: 83.3333%
+}
+
+.row>.offset-10 {
+    margin-left: 83.3333%
+}
+
+.column>.col-10 {
+    height: 83.3333%;
+    width: auto
+}
+
+.row>.col-11 {
+    height: auto;
+    width: 91.6667%
+}
+
+.row>.offset-11 {
+    margin-left: 91.6667%
+}
+
+.column>.col-11 {
+    height: 91.6667%;
+    width: auto
+}
+
+.row>.col-12 {
+    height: auto;
+    width: 100%
+}
+
+.row>.offset-12 {
+    margin-left: 100%
+}
+
+.column>.col-12 {
+    height: 100%;
+    width: auto
+}
+
+.row>.col-all {
+    height: auto;
+    flex: 0 0 100%
+}
+
+.no-transition {
+    transition: none !important
+}
+
+.transition-0 {
+    transition: 0s !important
+}
+
+img.responsive {
+    max-width: 100%;
+    height: auto
+}
+
+.non-selectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important
+}
+
+.scroll {
+    overflow: auto
+}
+
+.scroll,
+.scroll-x,
+.scroll-y {
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position
+}
+
+.scroll-x {
+    overflow-x: auto
+}
+
+.scroll-y {
+    overflow-y: auto
+}
+
+.no-scroll {
+    overflow: hidden !important
+}
+
+
+.all-pointer-events {
+    pointer-events: all !important
+}
+
+.cursor-pointer {
+    cursor: pointer !important
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed !important
+}
+
+.cursor-inherit {
+    cursor: inherit !important
+}
+
+.cursor-none {
+    cursor: none !important
+}
+
+.relative-position {
+    position: relative
+}
+
+.fixed,
+.fixed-bottom,
+.fixed-bottom-left,
+.fixed-bottom-right,
+.fixed-center,
+.fixed-full,
+.fixed-left,
+.fixed-right,
+.fixed-top,
+.fixed-top-left,
+.fixed-top-right,
+.fullscreen {
+    position: fixed
+}
+
+.absolute,
+.absolute-bottom,
+.absolute-bottom-left,
+.absolute-bottom-right,
+.absolute-center,
+.absolute-full,
+.absolute-left,
+.absolute-right,
+.absolute-top,
+.absolute-top-left,
+.absolute-top-right {
+    position: absolute
+}
+
+.absolute-top,
+.fixed-top {
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+.absolute-right,
+.fixed-right {
+    top: 0;
+    right: 0;
+    bottom: 0
+}
+
+.absolute-bottom,
+.fixed-bottom {
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.absolute-left,
+.fixed-left {
+    top: 0;
+    bottom: 0;
+    left: 0
+}
+
+.absolute-top-left,
+.fixed-top-left {
+    top: 0;
+    left: 0
+}
+
+.absolute-top-right,
+.fixed-top-right {
+    top: 0;
+    right: 0
+}
+
+.absolute-bottom-left,
+.fixed-bottom-left {
+    bottom: 0;
+    left: 0
+}
+
+.absolute-bottom-right,
+.fixed-bottom-right {
+    bottom: 0;
+    right: 0
+}
+
+.fullscreen {
+    z-index: 6000;
+    border-radius: 0 !important;
+    max-width: 100vw;
+    max-height: 100vh
+}
+
+.absolute-full,
+.fixed-full,
+.fullscreen {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.absolute-center,
+.fixed-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.vertical-top {
+    vertical-align: top !important
+}
+
+.vertical-middle {
+    vertical-align: middle !important
+}
+
+.vertical-bottom {
+    vertical-align: bottom !important
+}
+
+.fit {
+    width: 100% !important
+}
+
+.fit,
+.full-height {
+    height: 100% !important
+}
+
+.full-width {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important
+}
+
+.window-height {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    height: 100vh !important
+}
+
+.window-width {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100vw !important
+}
+
+.block {
+    display: block !important
+}
+
+.inline-block {
+    display: inline-block !important
+}
+
+.text-uppercase {
+    text-transform: uppercase
+}
+
+.text-lowercase {
+    text-transform: lowercase
+}
+
+.text-capitalize {
+    text-transform: capitalize
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-justify {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto
+}
+
+.text-italic {
+    font-style: italic
+}
+
+.text-bold {
+    font-weight: 700
+}
+
+.text-no-wrap {
+    white-space: nowrap
+}
+
+.text-strike {
+    text-decoration: line-through
+}
+
+.margin-auto {
+    margin: 0 atuo;
+}
+
+.no-margin {
+    margin: 0 !important
+}
+
+.no-padding {
+    padding: 0 !important
+}
+
+.no-border {
+    border: 0 !important
+}
+
+.no-border-radius {
+    border-radius: 0 !important
+}
+
+.no-box-shadow {
+    box-shadow: none !important
+}
+
+.no-outline {
+    outline: 0 !important
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.ellipsis-2-lines,
+.ellipsis-3-lines {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical
+}
+
+.ellipsis-2-lines {
+    -webkit-line-clamp: 2
+}
+
+.ellipsis-3-lines {
+    -webkit-line-clamp: 3
+}
+
+.readonly {
+    cursor: default !important
+}
+
+.hidden {
+    display: none !important
+}
+
+.invisible {
+    visibility: hidden !important
+}
+
+.transparent {
+    background: transparent !important
+}
+
+.overflow-auto {
+    overflow: auto !important
+}
+
+.overflow-hidden {
+    overflow: hidden !important
+}
+
+.overflow-hidden-y {
+    overflow-y: hidden !important
+}
+
+.hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none
+}
+
+.column {
+    min-width: 0%
+}
+
+.flex>.col,
+.row>.col {
+    flex-basis: auto;
+    min-width: 0%
+}

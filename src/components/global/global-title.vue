@@ -2,11 +2,12 @@
     <div class="title-bar" :style="getStyle(styles)">
         <div class="title-box" :style="{ marginTop: `${store.system.statusBarHeight}px` }">
             <div class="title-left" @click="back">
-                <div class="title-left-icon" v-if="backShow && router.history.length > 1">
-                    <img src="@/static/image/left.svg" style="width:22px;margin-top: 2px;" />
+                <div class="title-left-icon" v-if="backShow">
+                    <img src="@/static/image/left.svg" style="width:22px;margin-top: 2px;height: 44px;" />
+                    {{ backText }}
                 </div>
             </div>
-            <div class="title-centent">{{ title }}</div>
+            <div class="title-centent ellipsis">{{ title }}</div>
             <div class="title-right"></div>
         </div>
     </div>

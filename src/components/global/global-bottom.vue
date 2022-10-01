@@ -28,7 +28,10 @@ const conf = reactive({
 })
 
 const switchTab = (item: any) => {
-    router.clear(item.pagePath)
+    if (item.routerType === 'push')
+        router.push(item.pagePath)
+    else
+        router.clear(item.pagePath)
 }
 
 const show = () => {
@@ -51,7 +54,7 @@ show()
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 70px;
     background: white;
     display: flex;
     padding-bottom: env(safe-area-inset-bottom);
@@ -59,7 +62,7 @@ show()
 }
 
 .tab-bar-hide {
-    transform: translate(0px, 60px);
+    transform: translate(0px, 70px);
 }
 
 .tab-bar-border {
@@ -88,8 +91,8 @@ show()
     }
 
     .tab-bar-text {
-        font-size: 10px;
-        margin-top: 5px;
+        font-size: 12px;
+        margin-top: 6px;
     }
 }
 </style>

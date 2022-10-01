@@ -1,15 +1,16 @@
 import store from "@/store";
-import clog from "@/utils/clog";
 import { routerList } from "./routeList";
 import { createRouter } from "./router";
 
 const tabsList = [
     routerList[0],
     routerList[1],
+    routerList[2],
+    routerList[3],
+    routerList[4],
 ]
 
-const router = createRouter(<any>routerList, tabsList)
-
+const router = createRouter(<any>routerList, <any>tabsList)
 
 router.beforeJump = async (from, to, next, type) => {
     next()
@@ -22,6 +23,5 @@ router.beforeJump = async (from, to, next, type) => {
         store.router.show = false
     }
 }
-
 
 export default router

@@ -1,6 +1,6 @@
 {
-  "name": "uniapp-wx",
-  "version": "0.0.0",
+  "name": "uniapp-vue3-ts-fast",
+  "version": "1.0.0",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:custom": "uni -p",

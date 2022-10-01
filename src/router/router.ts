@@ -12,11 +12,20 @@ const router = reactive({
     item: null as any as routerHistory,
     //操作类型
     type: 'replace',
+    init: () => {
+        router.item = null as any
+        router.history = null as any
+        router.type = 'replace'
+    },
     //保留之前路由，添加一个路由
     push: (pagePath: RPh, param: any = {}) => {
         if (router.item != null) if (pagePath === router.item.item.pagePath) return
         const addItem = jumpItem(pagePath, param)
         if (addItem) {
+            if (addItem.item.to) {
+                to(addItem.item.to, param, 'push')
+                return
+            }
             const next = () => {
                 router.item = addItem
                 router.history.push(addItem)
@@ -33,6 +42,10 @@ const router = reactive({
         if (router.item != null) if (pagePath === router.item.item.pagePath) return
         const addItem = jumpItem(pagePath, param)
         if (addItem) {
+            if (addItem.item.to) {
+                to(addItem.item.to, param, 'replace')
+                return
+            }
             const next = () => {
                 router.item = addItem
                 router.history[router.history.length - 1] = addItem
@@ -49,6 +62,10 @@ const router = reactive({
         if (router.item != null) if (pagePath === router.item.item.pagePath) return
         const addItem = jumpItem(pagePath, param)
         if (addItem) {
+            if (addItem.item.to) {
+                to(addItem.item.to, param, 'clear')
+                return
+            }
             const next = () => {
                 router.item = addItem
                 router.history = [addItem]
@@ -102,6 +119,12 @@ const getParam = (pagePath: string, param: any) => {
         })
     }
     return param
+}
+
+const to = (toPath: any, param: any, type: string) => {
+    if (toPath.indexOf('#') != -1)
+        router[type](toPath.substring(1), param)
+    else router.toError(toPath+"-前应添加#")
 }
 
 export const createRouter = (list: routerItem[], tabsList: routerItem[]) => {

@@ -1,6 +1,10 @@
 import { reactive } from "vue"
 
-export default reactive({
-    phone: 13012345678,
-    token: 'token...'
+const user = reactive({
+    proinfo: {
+        id: 0,
+        name: ''
+    }
 })
+
+export default user

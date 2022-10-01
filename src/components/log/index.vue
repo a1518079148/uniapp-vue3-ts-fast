@@ -1,9 +1,9 @@
 <template>
     <div :class="conf.class">
-        <div style="margin-top:-64rpx;position: absolute;" class="log-btn columnCC log-btn-wh" @click="show">{{
+        <div style="margin-top:-64rpx;position: absolute;" class="log-btn column flex-center log-btn-wh" @click="show">{{
                 conf.show ? '隐藏' : '显示'
         }}日志</div>
-        <div style="margin-top:-64rpx;position: absolute;right:10rpx;width: 100rpx;" class="log-btn columnCC log-btn-wh"
+        <div style="margin-top:-64rpx;position: absolute;right:10rpx;width: 100rpx;" class="log-btn column flex-center log-btn-wh"
             @click="store.log.clear">
             清空</div>
         <div class="log-content">

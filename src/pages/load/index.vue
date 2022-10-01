@@ -1,12 +1,12 @@
 <template>
-    <div style="width:100vw;height:100vh;overflow: hidden;" class="rowCC">
-        <div class="box rowCC">
+    <div style="width:100vw;height:100vh;overflow: hidden;" class="row flex-center">
+        <div class="box row flex-center">
             <img src="/static/image/bg2.png" class="icon" />
             <div style="position: absolute;">
                 <img src="/static/image/logo.png" class="logo" />
             </div>
             <div class="logo_text">
-                Vue3+Vite+Uniapp
+                Uniapp+Vue3+TypeScript
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@ ctimer.add(() => {
 .logo_text {
     position: absolute;
     bottom: -20rpx;
-    font-size: 48rpx;
+    font-size: 40rpx;
     font-weight: bold;
     color: #85A571;
     font-family: 'bsfont';

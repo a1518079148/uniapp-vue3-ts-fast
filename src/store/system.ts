@@ -22,15 +22,15 @@ const isWeixinClient = () => {
     return isWeixinClient
 }
 
-
 const systemInfo = uni.getSystemInfoSync()
 const system = reactive({
     uniBarHeight: 44,
-    uniTabsHeight: 60,
+    uniTabsHeight: 70,
     statusBarHeight: systemInfo.statusBarHeight as number,
     windowHeight: systemInfo.windowHeight,
     windowWidth: systemInfo.windowWidth,
 
+    pixelRatio: systemInfo.pixelRatio,//分辨率比值
     platform: systemInfo.platform, // 客户端平台，值域为：ios、android
     system: systemInfo.system, // 操作系统版本
     brand: systemInfo.brand, // 手机品牌

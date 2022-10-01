@@ -1,18 +1,46 @@
+import router from "."
+
+const tasObj = {
+    iconPath: "/static/image/logo.png",
+    selectedIconPath: "/static/image/logo.png",
+    showTitle: true,
+    titleBackText: '退出',
+    titleBackFun: () => {
+        router.clear('/login')
+    },
+    titleStyles: {
+        background: '#ffffff00',
+    },
+    showTabs: true,
+}
+
 export const routerList = [
     {
-        pagePath: "/home",
-        iconPath: "/static/image/logo.png",
-        selectedIconPath: "/static/image/logo.png",
+        pagePath: "/service/home",
         tabsText: "首页",
-        showTitle: true,
-        showTabs: true,
+        ...tasObj,
     },
     {
-        pagePath: "/user",
-        iconPath: "/static/image/logo.png",
-        selectedIconPath: "/static/image/logo.png",
-        tabsText: "用户",
-        showTabs: true,
+        pagePath: "/service/p1",
+        tabsText: "摸鱼",
+        ...tasObj,
+    },
+    {
+        pagePath: "/service/p2",
+        tabsText: "划水",
+        ...tasObj,
+    },
+    {
+        pagePath: "/service/p3",
+        tabsText: "酱油",
+        ...tasObj,
+    },
+    {
+        pagePath: "/service/qh",
+        tabsText: "切换",
+        routerType: 'push',
+        to: '#/prolist',
+        ...tasObj,
     },
     {
         pagePath: "/error",
@@ -29,8 +57,10 @@ export const routerList = [
     {
         pagePath: "/prolist",
         showTitle: true,
+        titleTop: true,
         titleStyles: {
-            background: '#000fff',
+            background: 'linear-gradient(90deg, rgba(62,185,88,0.25) 0%, rgba(255,255,255,0.05) 100%)',
+            boxShadow: '0px 4px 20px 0px rgba(133,165,113,0.15)',
         },
         title: '选择项目',
         param: {

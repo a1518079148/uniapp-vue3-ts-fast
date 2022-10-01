@@ -1,23 +1,16 @@
-declare type router = {
-    list: routerItem[];
-    tabslist: routerItem[];
-    history: routerHistory[];
-    item: routerHistory;
-    push: (pagePath: string, param?: any) => void;
-    replace: (pagePath: string, param?: any) => void;
-    clear: (pagePath: string, param?: any) => void;
-    back: () => void;
-    beforeJump: (to: routerHistory, from: routerHistory, next: () => void, type: 'push' | 'replace' | 'clear') => void;
-    toError: (path: string) => void;
-}
-
 declare type routerItem = {
 
     pagePath: string;
 
+    //跳转-需要在路径前加上#-如：跳转到'/home'，写成'#/home'
+    to?: string
+
     //顶部导航栏配置
     title?: string;
+    titleTop?: boolean
     showTitle?: boolean
+    titleBackText?: string
+    titleBackFun?: string
     titleStyles?: CSSStyleDeclaration
 
     //底部导航栏配置
@@ -25,6 +18,7 @@ declare type routerItem = {
     iconPath?: string;
     selectedIconPath?: string;
     tabsText?: string;
+    routerType?: string //点击跳转方式
 }
 
 declare type routerHistory = {

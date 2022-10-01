@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { onHide, onLaunch, onLoad, onShow } from '@dcloudio/uni-app';
+import clog from './utils/clog';
 onLaunch(() => {
-    console.log('App Launch')
+    clog.info('App Launch')
 })
 onShow(() => {
-    console.log('App Show')
+    clog.info('App Show')
 })
 onHide(() => {
-    console.log('App Hide')
+    clog.info('App Hide')
 })
 onLoad(() => {
+    clog.info('App Load')
 })
 </script>
 <style>

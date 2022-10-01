@@ -7,11 +7,9 @@ import GlobalModal from '@/components/global/global-modal.vue'
 import GlobalTitle from '@/components/global/global-title.vue'
 import log from '@/components/log/index.vue'
 import mask from '@/components/mask/index.vue'
-import router from '@/router'
 import RouteView from '@/router/index.vue'
 import App from './App.vue'
 import ctimer from './utils/ctimer'
-router.push('/load')
 ctimer.init()
 export function createApp() {
     const app = createSSRApp(App)
